@@ -56,7 +56,7 @@ charging_probability = pd.read_excel('./inputs/charging_probability.xlsx')
 ### HELPER FUNCTIONS ###
 def selectWorkingSchedule(total_weeks):
 	possible_schedules = [0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 0, 0], [1, 1, 1, 1, 0, 0, 0], [0, 1, 1, 1, 1, 0, 0], [0, 1, 1, 1, 0 , 0, 0], [1, 1, 1, 0, 0, 0, 0]
-	schedule = random.choices(possible_schedules, [0.225, 0.38, 0.38, 0.05, 0.05, 0.05])[0] * total_weeks
+	schedule = random.choices(possible_schedules, [0.2, 0.31, 0.31, 0.06, 0.06, 0.06])[0] * total_weeks
 	return schedule
 
 # Outputs one or two intervals to add small variety. TODO: fix -1, -2 etc.
