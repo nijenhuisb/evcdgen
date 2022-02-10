@@ -107,7 +107,7 @@ def createSchedule():
 	   'power_consumption_per_5_minutes': ev_power_consumption_per_5_minutes,
 	   'battery_capacity': ev_battery_capacity,
 	   'charging_power': ev_charging_power, # W
-	   'soc_decline_per_5_minutes': ev_power_consumption_per_5_minutes * 100 / 50,
+	   'soc_decline_per_5_minutes': ev_power_consumption_per_5_minutes * 100 / ev_battery_capacity,
 	   'soc_increase_per_5_minutes': ev_charging_energy_per_5_minutes * 100 / ev_battery_capacity,
 	   'state_of_charge': np.zeros(2016 * total_weeks),
 	   'power_status': np.array(['unkown' for _ in range(2016* total_weeks)], dtype = object),
