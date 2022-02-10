@@ -1,5 +1,4 @@
-# EVCDgen
-Electric Vehicle Charging Demand generator
+# EVCDgen - Electric Vehicle Charging Demand generator
 
 This page hosts the tool used for generating EV charging demand patterns based on Dutch mobility data. The work is going to be presented in:
 
