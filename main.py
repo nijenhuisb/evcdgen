@@ -93,6 +93,11 @@ def createSchedule():
 	ev_driving_distance_per_interval = 5 * ev_driving_velocity_per_minute
 	ev_power_consumption_per_5_minutes = 0.175 * ev_driving_distance_per_interval # 17.5 kWh per 100 km --> 0.175 kWh per km * driving_distance
 
+	ev_charging_power = 11000 # kW
+	ev_charging_energy_per_5_minutes = ev_charging_power / 1000 / 12 # charging power in kW(h) divided by 12 (5-minute) intervals
+
+	ev_battery_capacity = 50 # kWh
+
 	ev = {
 	   'weekschedule': np.zeros(0),
 	   'workroutine': workschedule,
@@ -100,10 +105,10 @@ def createSchedule():
 	   'travel_time_to_work': random.choices(hometowork['travel'].index, hometowork['travel']),
 	   'time_spent_at_work': random.choices(workingtime['workingtime'].index, workingtime['workingtime']),
 	   'power_consumption_per_5_minutes': ev_power_consumption_per_5_minutes,
-	   'battery_capacity': 50,
-	   'charging_power': 11000, # W
+	   'battery_capacity': ev_battery_capacity,
+	   'charging_power': ev_charging_power, # W
 	   'soc_decline_per_5_minutes': ev_power_consumption_per_5_minutes * 100 / 50,
-	   'soc_increase_per_5_minutes': 0.55 * 100 / 50,
+	   'soc_increase_per_5_minutes': ev_charging_energy_per_5_minutes * 100 / ev_battery_capacity,
 	   'state_of_charge': np.zeros(2016 * total_weeks),
 	   'power_status': np.array(['unkown' for _ in range(2016* total_weeks)], dtype = object),
 	   'power_demand_home': np.zeros(2016 * total_weeks),
