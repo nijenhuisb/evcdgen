@@ -1,7 +1,7 @@
 # EVCDgen - Electric Vehicle Charging Demand generator v0.1
 This is a basic tool with the purpose of generating EV charging demand patterns out of regular mobility data. The tool converts anonymized single-day trip diaries of Dutch citizens to weekly EV mobility schedules and connects these schedules to a model that decides when and at what location (of type home/work/public) the EV starts to charge based on its State-of-Charge.
 
-More information can be found in the related research paper, which is going to be presented in the CIRED22 Workshop, 2-3 June 2022 [1].
+More information can be found in the related research paper, which is planned for presentation in the CIRED22 Workshop, 2-3 June 2022 [1].
 
 [1] Using mobility data and agent based models to generate future e-mobility charging demand patterns, B. Nijenhuis; S. C. Doumen; J. Hönen; G. Hoogsteen; CIRED22 Workshop, Porto.
 
